@@ -1,17 +1,20 @@
-let allEvents;
 let event;
 const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };
 
 /* this is used a few places and it is vulnerable */
+const getAllEvents = () => {
+  return ['Marathon', 'Triathlon', 'Decathlon'];
+};
 
 const getRandomEvent = () => {
-  allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
+  const allEvents = getAllEvents();
   event = allEvents[Math.floor(Math.random() * allEvents.length)];
 };
 
 
 const getEventActivities = () => {
-  allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
+  const allEvents = getAllEvents();
+
 
   if (!allEvents.includes(event)) {
     return null;
@@ -33,7 +36,8 @@ const getEventActivities = () => {
 };
 
 const getDaysToTrain = () => {
-  allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
+  const allEvents = getAllEvents();
+
   if (!allEvents.includes(event)) {
     return null;
   }
