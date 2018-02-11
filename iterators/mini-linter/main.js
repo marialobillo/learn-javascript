@@ -13,4 +13,20 @@ betterWords = storyWords.filter(word => {
 
 });
 
-console.log(betterWords);
+//console.log(betterWords);
+
+
+var really_used = 0;
+for(let i = 0; i < storyWords.length; i++){
+  if(storyWords[i] === 'very'){
+    really_used++;
+  }
+}
+console.log("Word count: very -> " + really_used);
+
+let sentences = 0;
+storyWords.forEach(word => {
+  if (word[word.length-1] === '.' || word[word.length-1] === '!') {
+    sentences+=1;
+  }
+});
